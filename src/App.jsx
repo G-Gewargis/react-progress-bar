@@ -1,35 +1,37 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import ProgressBar from './ProgressBar'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [progress, setProgress] = useState(0);
+  function increaseProgress() {
+    let currentProgress = progress;
+    if (currentProgress === 100) {
+      alert("Maximum Progress has been reached!");
+    }
+    else {
+      setProgress(currentProgress + 10);
+    }
+  };
+
+  const decreaseProgress = () => {
+    let currentProgress = progress;
+    if (currentProgress === 0) {
+      alert("Minimum Progress has been reached!");
+    }
+    else {
+      setProgress(currentProgress - 10);
+    }
+  };
+
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <ProgressBar progress={progress} />
+      <button onClick={increaseProgress}> Increase Progress </button> 
+      <br></br>
+      <br></br>
+      <button onClick={decreaseProgress}> Decrease Progress </button>
+    </div>
   )
 }
-
-export default App
