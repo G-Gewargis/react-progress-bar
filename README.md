@@ -46,13 +46,6 @@ To get started with this project, follow the steps below:
 
 5. Open your browser and navigate to `http://localhost:3000` to see the progress bar in action.
 
-## Usage
-
-Feel free to modify the code and experiment with different features and styles. This project is meant to be a learning tool, so don't hesitate to try new things and make it your own.
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions or improvements, please feel free to open an issue or submit a pull request.
 
 ## License
 
